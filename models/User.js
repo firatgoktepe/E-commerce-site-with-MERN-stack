@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const { isEmail } = require('validator');
 
-const UserSchema = mongoose.Schema({
+const UserSchema = new Schema({
     name: {
         type: String,
         required: true
