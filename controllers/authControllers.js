@@ -29,7 +29,7 @@ module.exports.sigup = (req, res) => {
                     newUser.save()
                         .then(user => {
                             jwt.sign(
-                                { id: user.id },
+                                { id: user._id },
                                 config.get('jwtSecret'),
                                 { expiresIn: 3600 },
                                 (err, token) => {
@@ -37,7 +37,7 @@ module.exports.sigup = (req, res) => {
                                     res.json({
                                         token,
                                         user: {
-                                            id: user.id,
+                                            id: user._id,
                                             name: user.name,
                                             email: user.email
                                         }
@@ -83,7 +83,7 @@ module.exports.login = async (req, res) => {
                             res.json({
                                 token,
                                 user: {
-                                    id: user.id,
+                                    id: user._id,
                                     name: user.name,
                                     email: user.email
                                 }
@@ -92,4 +92,17 @@ module.exports.login = async (req, res) => {
                     )
                 })
         })
+}
+
+// Get user module
+module.exports.get_user = (req, res) => {
+    User.findById(req.user.id)
+        .select('-password')
+        .then(user => {
+            res.json(user);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
+        });
 }
