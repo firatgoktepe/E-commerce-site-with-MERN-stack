@@ -4,7 +4,7 @@ import {
     UPDATE_ITEM,
     GET_ITEMS,
     ITEMS_LOADING
-} from '../actions/itemActions'
+} from '../actions/types'
 
 const initialState = {
     items: [],
