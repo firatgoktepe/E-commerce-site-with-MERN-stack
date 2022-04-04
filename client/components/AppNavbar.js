@@ -55,5 +55,27 @@ class AppNavbar extends Component {
                 </NavItem>
             </Fragment>
         )
+
+        return (
+            <div>
+                <Navbar color="dark" dark expand="sm" className="mb-5">
+                    <Container>
+                        <NavbarBrand href="/">E-Commerce Store</NavbarBrand>
+                        <NavbarToggler onClick={this.toggle} />
+                        <Collapse isOpen={this.state.isOpen} navbar>
+                            <Nav className="ml-auto" navbar>
+                                { isAuthenticated ? authLinks : guestLinks }
+                            </Nav>
+                        </Collapse>
+                    </Container>
+                </Navbar>
+            </div>
+        )
     }
 }
+
+const mapStateToProps =  state => ({
+    auth: state.auth
+})
+
+export default connect(mapStateToProps, null)(AppNavbar);
