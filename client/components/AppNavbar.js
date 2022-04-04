@@ -22,6 +22,27 @@ class AppNavbar extends Component {
     }
 
     render() {
-        
+        const { isAuthenticated, user } = this.props.auth;
+        const authLinks = (
+            <Fragment>
+                <NavItem>
+                    <span className="navbar-text mr-3">
+                        <strong>{ user ? `Welcome ${user.name}` : '' }</strong>
+                    </span>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/cart">Cart</NavLink>
+                </NavItem>
+                <NavItem className="mr-2">
+                    <NavLink href="/orders">Orders</NavLink>
+                </NavItem>
+                <NavItem>
+                    <Logout />
+                </NavItem>
+            </Fragment>
+        )
     }
 }
