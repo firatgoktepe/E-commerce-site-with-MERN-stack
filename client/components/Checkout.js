@@ -7,9 +7,9 @@ const onToken = (user,checkout) => token =>
 
 const Checkout = ({ amount, user, checkout }) => 
     <StripeCheckout
-      amount={amount*100}
+      amount={amount}
       token={onToken(user,checkout)}
-      currency='INR'
+      currency='TRY'
       stripeKey={STRIPE_PUBLISHABLE}
 />
 
