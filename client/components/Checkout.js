@@ -1,6 +1,7 @@
 import StripeCheckout from 'react-stripe-checkout';
 
-const STRIPE_PUBLISHABLE = 'pk_test_********************';
+const stripe_publishable = require('stripe')(config.get('StripePublishableKey'));
+const STRIPE_PUBLISHABLE = stripe_publishable;
 
 const onToken = (user,checkout) => token => 
     checkout(user, token.id);
