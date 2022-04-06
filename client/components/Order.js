@@ -47,14 +47,14 @@ class Orders extends Component {
                                 <div className="col-md-12">
                                     <Card>
                                         <CardBody>
-                                            <CardTitle tag="h4">{order.items.length} items - Total cost: Rs. {order.bill}</CardTitle>
+                                            <CardTitle tag="h4">{order.items.length} items - Total cost: {order.bill}</CardTitle>
                                             <div className="row">
                                             {order.items.map((item)=>(
                                                 <div className="col-md-4">
                                                     <Card className="mb-2">
                                                         <CardBody>
                                                             <CardTitle tag="h5">{item.name} ({item.quantity} pieces)</CardTitle>
-                                                            <CardSubtitle tag="h6">Rs. {item.price}/piece</CardSubtitle>
+                                                            <CardSubtitle tag="h6"> {item.price}/piece</CardSubtitle>
                                                         </CardBody>
                                                     </Card>
                                                 </div>
