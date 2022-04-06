@@ -58,7 +58,7 @@ class Cart extends Component {
                         <Card>
                             <CardBody>
                                 <CardTitle tag="h5">{item.name}</CardTitle>
-                                <CardSubtitle tag="h6">Rs. {item.price}</CardSubtitle>
+                                <CardSubtitle tag="h6">{item.price}</CardSubtitle>
                                 <CardText>Quantity - {item.quantity}</CardText>
                                 <Button color="danger" onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</Button>
                             </CardBody>
@@ -69,7 +69,7 @@ class Cart extends Component {
                         <div class="col-md-12">
                         <Card>
                             <CardBody>
-                                <CardTitle tag="h5">Total Cost = Rs. {this.props.cart.cart.bill}</CardTitle>
+                                <CardTitle tag="h5">Total Cost = {this.props.cart.cart.bill}</CardTitle>
                                 <Checkout
                                     user={user._id}
                                     amount={this.props.cart.cart.bill}
