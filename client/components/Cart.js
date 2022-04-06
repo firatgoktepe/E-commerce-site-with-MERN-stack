@@ -50,7 +50,8 @@ class Cart extends Component {
                 }  
         
             
-                {this.props.isAuthenticated && !this.props.cart.loading && this.state.loaded && this.props.cart.cart ?
+                {this.props.isAuthenticated && !this.props.cart.loading && this.state.loaded && this.props.cart.cart 
+                ?
                 <Container>
                     <div className="row">
                         {this.props.cart.cart.items.map((item)=>(
@@ -80,7 +81,7 @@ class Cart extends Component {
                         </div>
                     </div>
                 </Container>
-                    :null}
+                :null}
             </div>
             
         )
