@@ -4,7 +4,7 @@ import Home from './Home';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Cart from './Cart';
-import Orders from './Oder';
+import Orders from './Order';
 
 class Main extends Component {
     render(){
